@@ -56,6 +56,7 @@
                 </a>
             {% endif %}
             <ul id="js-navigation--main__list" class="navigation--main__list">
+                <li><a href="{{ SITEURL }}">Home</a></li>
                 {% if DISPLAY_PAGES_ON_MENU %}  
                 {% for p in pages|sort(attribute='date') %}
                     {% if not p.nav == 'footer' %}
@@ -98,7 +99,7 @@
     <div class="grid">
     <div class="s-12 m-12 l-7 last-s last-m">
         <nav class="site-footer-navigation">
-        {% for p in PAGES %}
+        {% for p in pages %}
         {% if p.nav == 'footer' %}
             <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
         {% endif %}
