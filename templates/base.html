@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
+
 {% block head %}
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     <meta charset="utf-8" />
@@ -33,6 +34,9 @@
     {% endif %}
 {% endblock head %}
     <link rel="stylesheet" type="text/css" href="{{ main_siteurl }}/theme/css/screen.css">
+    <!-- >>>> Start >>>>> PHOTO plugin: lightbox style >>>>>>>>> -->
+    <link rel="stylesheet" type="text/css" href="{{ main_siteurl }}/theme/css/magnific-popup.css" />
+    <!-- <<<< End <<<<< PHOTO plugin: lightbox style <<<<<<<<< -->
     {% block extra_css %}{% endblock extra_css %}
 </head>
 
@@ -137,5 +141,6 @@
 {% block js_script %}{% endblock %}
 <script src="{{ main_siteurl }}/theme/js/app-min.js"></script>
 
+{% include 'lightbox_gallery.html' %}
 </body>
 </html>
