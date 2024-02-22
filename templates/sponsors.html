@@ -77,28 +77,30 @@
 <h2 class="small">Bronze Sponsors</h2>
 <div class="flex-container">
 	{% for p in EVENT_PARTNERS['bronze'] %}
-	<center>
+		<center>
 		<div class="flex-item">
+			
 			<a href="{{ p.1 }}" class="partner-link">
 				<img src="{{ main_siteurl }}/theme/images/{{ p.2 }}"
 					class="flex-image" alt="{{ p.0 }}" />
 			</a>
+			
 		</div>
-	</center>
+		</center>
 	{% endfor %}
 </div>
 
 <h2 class="small">Partners</h2>
 <div class="flex-container">
 	{% for p in EVENT_PARTNERS['partners'] %}
-		<div class="flex-item">
 		<center>
+		<div class="flex-item">
 			<a href="{{ p.1 }}" class="partner-media-link">
 				<img src="{{ main_siteurl }}/theme/images/{{ p.2 }}"
 					class="image" alt="{{ p.0 }}" />
 			</a>
-		</center>
 		</div>
+		</center>
 	{% endfor %}
 </div>
 
