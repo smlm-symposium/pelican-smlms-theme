@@ -1,0 +1,67 @@
+{% extends "page.html" %}
+
+{% block content %}
+<div class="container">
+<div class="grid">
+<div class="s-12 last">
+
+<style>
+	.speaker-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.speaker-item {
+		width: 180px;
+		height: 230px;
+		margin: 5px;
+		padding-top: 5px;
+
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		align-items: center;
+		text-align: center;
+		font-size: 0.8em; /* Decreased font size */
+	}
+
+	.speaker-image {
+		width: 150px;
+		height: 160px;
+		object-fit: cover;
+	}
+</style>
+
+<h2 class="small">Keynote Speakers</h2>
+<div class="speaker-container">
+	{% for s in EVENT_SPEAKERS['keynote'] %}
+		<div class="speaker-item">
+			<img src="{{ main_siteurl }}/theme/images/{{ s.3 }}"
+				class="speaker-image" alt="{{ s.0 }}" />
+			<div><b>{{ s.0 }}</b><br>{{ s.1 }}<br>{{ s.2 }}</div>
+		</div>
+	{% endfor %}
+</div>
+
+<h2 class="small">Invited Speakers</h2>
+<div class="speaker-container">
+	{% for s in EVENT_SPEAKERS['invited'] %}
+		<div class="speaker-item">
+			<img src="{{ main_siteurl }}/theme/images/{{ s.3 }}"
+				class="speaker-image" alt="{{ s.0 }}" />
+			<div><b>{{ s.0 }}</b><br>{{ s.1 }}<br>{{ s.2 }}</div>
+		</div>
+	{% endfor %}
+</div>
+
+{{ page.content }}
+
+</div>
+</div>
+</div>
+{% endblock %}
