@@ -27,15 +27,17 @@
 </style>
 
 <div class="gallery">
-    {% for title, gallery in galleries %}
-        <h1>{{ title }}</h1>
-        {% for name, photo, thumb, exif, caption in gallery %}
-            <div class="gallery-item">
-                <a href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}">
-                    <img src="{{ SITEURL }}/{{ thumb }}">
-                </a>
-            </div>
-        {% endfor %}
+{% for title, gallery in galleries %}
+    {% if title != "" %}
+    <h1>{{ title }}</h1>
+    {% endif %}
+    {% for name, photo, thumb, exif, caption in gallery %}
+        <div class="gallery-item">
+            <a href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}">
+                <img src="{{ SITEURL }}/{{ thumb }}">
+            </a>
+        </div>
     {% endfor %}
+{% endfor %}
 </div>
 <!-- <<<< End <<<<< PHOTO plugin: inline gallery <<<<<<<<< -->
